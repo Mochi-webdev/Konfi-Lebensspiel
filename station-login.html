@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Stations-Login | Lebensspiel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="center-wrapper">
+    <div class="login-box">
+      <h1>Stations-Login</h1>
+      <select id="stationSelect">
+        <option value="">Station wählen</option>
+        <option value="bar">🍹 Bar</option>
+        <option value="casino">🎰 Casino</option>
+        <option value="reisebuero">✈️ Reisebüro</option>
+        <option value="warenhaus">🛍️ Warenhaus</option>
+        <option value="hotel">🏨 Hotel</option>
+        <option value="imbiss">🍔 Imbiss</option>
+      </select>
+
+      <input id="stationPw" type="password" placeholder="Passwort" />
+      <button class="btn primary" onclick="stationLogin()">Anmelden</button>
+      <p id="stationError" class="error"></p>
+
+      <p class="tiny">Zurück zur <a href="index.html">Gruppen-Anmeldung</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

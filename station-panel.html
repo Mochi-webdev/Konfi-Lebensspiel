@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Station | Lebensspiel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="topbar">
+    <h2 id="stationTitle">Station</h2>
+    <button class="btn ghost small" onclick="logoutStation()">Logout</button>
+  </div>
+
+  <div class="station-panel">
+    <label for="groupSelect">Gruppe</label>
+    <select id="groupSelect"></select>
+
+    <input id="amount" type="number" placeholder="Betrag (+/-)" />
+    <input id="note" placeholder="Notiz (z. B. 20 $ Getränke)" />
+    <button class="main-btn" onclick="applyStationAction()">💾 Speichern</button>
+    <!-- Nur sichtbar, wenn Station = Casino -->
+<button id="casinoPlayBtn" class="main-btn" style="background:#f1c40f; margin-top:10px;" onclick="casinoPlay()">🎰 Spielen</button>
+
+<script>
+  const key = localStorage.getItem("loggedStation");
+  if (key !== "casino") document.getElementById("casinoPlayBtn").style.display = "none";
+</script>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

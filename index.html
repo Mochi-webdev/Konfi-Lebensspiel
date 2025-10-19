@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Gruppen Login | Lebensspiel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <div class="center-wrapper">
+    <div class="login-box">
+      <h1>Gruppen Login</h1>
+
+      <input id="groupName" placeholder="Gruppenname" autocomplete="off" />
+      <input id="password" type="password" placeholder="Passwort" autocomplete="off" />
+      <div class="row">
+        <button class="btn primary" onclick="groupLogin()">Anmelden</button>
+        <button class="btn ghost" onclick="prefillTest()">Demo</button>
+      </div>
+      <p id="error" class="error"></p>
+
+      <p class="tiny">Mitarbeiter? → <a href="station-login.html">Stations-Login</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

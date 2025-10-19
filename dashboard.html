@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Dashboard | Lebensspiel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark">
+  <!-- Top bar: group left, dropdown right -->
+  <div class="topbar">
+    <div class="top-left">
+      <h2 id="groupTitle">Gruppe</h2>
+    </div>
+
+    <div class="top-right">
+      <select id="transactionDropdown" aria-label="Ausgaben"></select>
+      <button class="btn ghost small" onclick="logoutGroup()">Abmelden</button>
+    </div>
+  </div>
+
+  <!-- Center: Inventory -->
+  <main class="main-area">
+    <div class="inventory" id="inventory">
+      <div class="item" id="item-friends" data-key="friends">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Freunde">
+        <p>Freunde</p>
+      </div>
+
+      <div class="item" id="item-clothes" data-key="clothes">
+        <img src="https://cdn-icons-png.flaticon.com/512/892/892458.png" alt="Kleidung">
+        <p>Kleidung</p>
+      </div>
+
+      <div class="item" id="item-mp3" data-key="mp3">
+        <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="MP3-Player">
+        <p>MP3-Player</p>
+      </div>
+    </div>
+  </main>
+  <!-- Casino-Animation (versteckt bis aktiviert) -->
+<div id="casino-animation" class="casino-box hidden">
+  <div class="slots" id="slot-symbols">💎💎💎</div>
+  <p id="casino-result"></p>
+</div>
+
+
+  <!-- Bottom-right money -->
+  <div class="bottom-right">
+    <p class="money">💰 <span id="money">0</span> $</p>
+  </div>
+
+  <script src="script.js"></script>
+  <script> // ensure dashboard auto-refresh every 1s to reflect admin changes
+    if (window.location.pathname.includes("dashboard.html")) {
+      setInterval(() => {
+        if (typeof loadDashboard === "function") loadDashboard();
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
